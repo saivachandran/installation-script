@@ -29,3 +29,69 @@ sudo apt install mysql-server
 
 mysqladmin -u root -p version
 
+---------------------------------------
+
+create database
+---------------
+
+mysql -u root -p
+
+
+create database store;
+
+use store;
+
+
+create table
+-----------
+
+CREATE TABLE customer ( id Int(3), name Varchar (15), location Varchar(20), email Varchar(20), mobileno Varchar(20)); 
+
+
+show columns from customer;
+
+
+
+INSERT INTO customer VALUES ('1' , 'saiva' , 'pmk' , 'saiva@xyz.com' , '0987654321' );
+
+INSERT INTO customer VALUES ('2' , 'prem' , 'mdu' , 'prem@xyz.com' , '1234567890' );
+
+INSERT INTO customer VALUES ('3' , 'jino' , 'thondi' , 'jino@xyz.com' , '6712345092' );
+
+
+ select * from customer;
+ 
+ 
+ 
+  # create user in mysql
+ 
+  CREATE USER 'saiva'@'localhost' IDENTIFIED BY 'Saiva@123';
+ 
+ 
+  CREATE USER 'prem'@'localhost' IDENTIFIED BY 'Prem@123';
+  
+  CREATE USER 'jino'@'localhost' IDENTIFIED BY 'Jino@123';
+  
+  
+  # view created user in mysql
+  
+  select user from mysql.user;
+  
+  
+ # grant permission 
+ 
+GRANT ALL PRIVILEGES ON * . * TO 'saiva'@'localhost';
+
+SHOW GRANTS FOR 'saiva'@'localhost';
+
+FLUSH PRIVILEGES;
+
+
+# Revoke permission
+
+REVOKE ALL PRIVILEGES ON * . * FROM 'saiva'@'localhost';
+
+FLUSH PRIVILEGES; 
+
+
+
