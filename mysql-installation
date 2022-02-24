@@ -1,0 +1,31 @@
+# mysql installation steps ubuntu 20.04
+
+cd /tmp
+
+# downlod mysql installation config file
+
+curl -OL https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
+
+# install config file
+
+sudo dpkg -i mysql-apt-config*
+
+
+# update the package
+
+sudo apt update
+
+# remove config file
+
+rm mysql-apt-config*
+
+
+# install mysql
+
+sudo apt install mysql-server
+
+
+# validate version
+
+mysqladmin -u root -p version
+
