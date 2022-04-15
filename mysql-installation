@@ -117,6 +117,29 @@ show grants for 'prem'@'localhost';
 
 FLUSH PRIVILEGES;
 
+# create user with all privileges
+
+  CREATE USER 'saiva'@'localhost' IDENTIFIED BY 'pass';
+  
+  CREATE USER 'saiva'@'%' IDENTIFIED BY 'pass';
+  
+  GRANT ALL PRIVILEGES ON * . * TO 'saiva'@'localhost';
+  
+  GRANT ALL PRIVILEGES ON * . * TO 'saiva'@'%';
+  
+  SHOW GRANTS FOR 'saiva'@'localhost';
+  
+  SHOW GRANTS FOR 'saiva'@'%';
+  
+  FLUSH PRIVILEGES;
+
+
+
+# Revoke permission
+
+REVOKE ALL PRIVILEGES ON * . * FROM 'saiva'@'localhost';
+
+FLUSH PRIVILEGES; 
 
 
 # mysql remote user access
