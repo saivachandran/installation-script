@@ -13,8 +13,6 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
 
 
-
-
 # Introduction
 
 # PostgreSQL is a fully featured database management system (DBMS) with a strong emphasis on extensibility and SQL compliance. It is backed by 20 years of open-source development, and supports both SQL (relational) and JSON (non-relational) querying.
@@ -100,6 +98,45 @@ postgres=# CREATE TABLE clients (id SERIAL PRIMARY KEY, first_name VARCHAR, last
 # view created tables
 
 postgres=#\dt
+
+
+# Let’s now insert the first row into your newly created “clients” table.
+
+INSERT INTO clients (first_name, last_name, role) VALUES ('John', 'Smith', 'CEO');
+
+# And query the table to get all its rows.
+
+SELECT * FROM clients;
+
+
+# Setup PostgreSQL server
+
+
+# Let’s now exit the interactive psql session by typing exit, and access postgresql.conf configuration file of PostgreSQL version 14 by using vim text editor.
+
+vim /etc/postgresql/14/main/postgresql.conf
+
+# Uncomment and edit the listen_addresses attribute to start listening to start listening to all available IP addresses.
+
+listen_addresses = '*'
+
+# Now edit the PostgreSQL access policy configuration file.
+
+vim /etc/postgresql/14/main/pg_hba.conf
+
+# Append a new connection policy (a pattern stands for [CONNECTION_TYPE][DATABASE][USER] [ADDRESS][METHOD]) in the bottom of the file.
+
+host all all 0.0.0.0/0 md5
+
+# We are allowing TCP/IP connections (host) to all databases (all) for all users (all) with any IPv4 address (0.0.0.0/0) using an MD5 encrypted password for authentication (md5).
+
+# It is now time to restart your PostgreSQL service to load your configuration changes.
+
+systemctl restart postgresql
+
+# And make sure your system is listening to the 5432 port that is reserved for PostgreSQL.
+
+ss -nlt | grep 5432
 
 
 
