@@ -161,6 +161,9 @@ grant all privileges on database test_erp to saiva;
 
 revoke all privileges on database test_erp from saiva;
 
+# list user in postgres
+
+SELECT usename FROM pg_user;
 drop user saiva;
 
 
