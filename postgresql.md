@@ -196,12 +196,12 @@ ALTER ROLE testing CREATEROLE CREATEDB;
 postgres-# CREATE ROLE readaccess;
   
   
-2. Assign Permission
-Run the following commands to assign access to newly created role, for database mydb. You can change database name as per your requirement.
+# 2. Assign Permission
+# Run the following commands to assign access to newly created role, for database mydb. You can change database name as per your requirement.
 
 postgres-# GRANT CONNECT ON DATABASE mydb TO readaccess;
   
-Further we will grant access to all tables in public schema. You can change schema name as per your requirement.
+# Further we will grant access to all tables in public schema. You can change schema name as per your requirement.
 
 postgres-# GRANT USAGE ON SCHEMA public TO readaccess;
 postgres-# GRANT SELECT ON ALL TABLES IN SCHEMA public TO readaccess;
@@ -213,7 +213,7 @@ postgres-# GRANT SELECT ON mytable IN SCHEMA public TO readaccess;
 
 
 
-3. Create User
+# 3. Create User
 Finally, we create a PostgreSQL user and assign the newly created role to that user. Update read_user and read_password in commands below with your username and password.
 
 postgres-# CREATE USER read_user WITH PASSWORD 'read_password';
