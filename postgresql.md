@@ -186,3 +186,35 @@ ALTER USER librarian WITH SUPERUSER;
 ALTER USER librarian WITH NOSUPERUSER;  
   
 ALTER ROLE testing CREATEROLE CREATEDB;  
+  
+  
+# How to Create Read Only User
+ 
+#  1. Create Role
+# Log into PostgreSQL and run the following command to a create read only role readaccess. Replace role name as per your requirement.
+
+postgres-# CREATE ROLE readaccess;
+  
+  
+2. Assign Permission
+Run the following commands to assign access to newly created role, for database mydb. You can change database name as per your requirement.
+
+postgres-# GRANT CONNECT ON DATABASE mydb TO readaccess;
+  
+Further we will grant access to all tables in public schema. You can change schema name as per your requirement.
+
+postgres-# GRANT USAGE ON SCHEMA public TO readaccess;
+postgres-# GRANT SELECT ON ALL TABLES IN SCHEMA public TO readaccess;
+  
+# If you want to grant select permission for specific tables (e.g mytable) run the following command
+
+postgres-# GRANT SELECT ON mytable IN SCHEMA public TO readaccess;
+
+
+
+
+3. Create User
+Finally, we create a PostgreSQL user and assign the newly created role to that user. Update read_user and read_password in commands below with your username and password.
+
+postgres-# CREATE USER read_user WITH PASSWORD 'read_password';
+postgres-# GRANT readaccess TO read_user;
