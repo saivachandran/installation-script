@@ -148,4 +148,25 @@ sudo apt install postgresql-client
 psql -h 5.199.162.56 -p 5432 -d test_erp -U postgres
 
 
+# postgres user creation
+
+create user saiva with encrypted password 'Saiva@123';
+
+CREATE USER saiva WITH PASSWORD 'Saiva@123';
+
+GRANT readaccess TO saiva;
+
+
+grant all privileges on database test_erp to saiva;
+
+revoke all privileges on database test_erp from saiva;
+
+drop user saiva;
+
+
+CREATE ROLE sa WITH LOGIN PASSWORD 'some-password.';
+CREATE DATABASE master WITH OWNER sa;
+\c master;
+
+
 
