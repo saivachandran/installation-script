@@ -139,6 +139,13 @@ systemctl restart postgresql
 ss -nlt | grep 5432
 
 
+# Connect to PostgreSQL database through a remote host
+
+sudo apt install postgresql-client
+
+# Let’s now connect to a remote PostgreSQL database that we have hosted on one of the Cherry Servers machines.
+
+psql -h 5.199.162.56 -p 5432 -d test_erp -U postgres
 
 
 
