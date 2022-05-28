@@ -169,4 +169,13 @@ CREATE DATABASE master WITH OWNER sa;
 \c master;
 
 
+# create role
+
+CREATE ROLE <role> WITH LOGIN PASSWORD '<password>';
+
+ALTER ROLE <role> WITH LOGIN;
+  
+ALTER ROLE <role> CREATEDB WITH LOGIN;
+  
+  
 
