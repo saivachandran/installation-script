@@ -8,7 +8,7 @@
           
           
   # step: 3 Add the following contents of the Amazon ECS PGP public key and save the file.  
-  
+```  
   -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v2
 
@@ -139,26 +139,26 @@ bhayG0bk51Bd4mioOXnIsKy4j63nJXA27x5EVVHQ1sYRN8Ny4Fdr2tMAmj2O+X+J
 qX2yy/UX5nSPU492e2CdZ1UhoU0SRFY3bxKHKB7SDbVeav+K5g==
 =Gi5D
 -----END PGP PUBLIC KEY BLOCK-----
-                                 
+```                                 
            
         
 # Import the file with the Amazon ECS PGP public key with the following command in the terminal.   
 
-
+```
               gpg --import public_key_filename.txt
-
+```
      
          
          
  # Download Ecs cli signature
- 
+ ```
            curl -Lo ecs-cli.asc https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest.asc   
-           
+  ```         
            
  # verify signature
- 
+ ```
         gpg --verify ecs-cli.asc /usr/local/bin/ecs-cli
-         
+  ```       
          
          
  # Apply Execute Permissions to the Binary       
@@ -167,9 +167,9 @@ qX2yy/UX5nSPU492e2CdZ1UhoU0SRFY3bxKHKB7SDbVeav+K5g==
          sudo chmod +x /usr/local/bin/ecs-cli
          
 # complete installation
-
+```
            ecs-cli --version
-  
+```  
   
   
 Refer link [Aws cli](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI_installation.html)         
