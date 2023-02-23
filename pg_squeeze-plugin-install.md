@@ -44,9 +44,9 @@ Verify that the pg_squeeze extension is installed and enabled in your database. 
 ```
 SELECT * FROM pg_extension WHERE extname = 'pg_squeeze';
 ```
-[Referl_link](https://github.com/cybertec-postgresql/pg_squeeze)
 
-```
+[Refer_link](https://github.com/cybertec-postgresql/pg_squeeze)
+
 [Referl_link]([https://github.com/cybertec-postgresql/pg_squeeze](https://www.cybertec-postgresql.com/en/pg_squeeze-optimizing-postgresql-storage/))
 
 
