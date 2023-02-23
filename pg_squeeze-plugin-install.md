@@ -47,6 +47,6 @@ SELECT * FROM pg_extension WHERE extname = 'pg_squeeze';
 
 [Refer_link_1](https://github.com/cybertec-postgresql/pg_squeeze)
 
-[Refer_link_2]([https://github.com/cybertec-postgresql/pg_squeeze](https://www.cybertec-postgresql.com/en/pg_squeeze-optimizing-postgresql-storage/)
+[Refer_link_2](https://github.com/cybertec-postgresql/pg_squeeze](https://www.cybertec-postgresql.com/en/pg_squeeze-optimizing-postgresql-storage)
 
 
